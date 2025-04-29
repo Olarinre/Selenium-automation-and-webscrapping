@@ -18,12 +18,14 @@ next_match_data = []
 odds_data = []
 date =[  ]
 
+for row in table_data:
+    print(row.text)
 
-for txt in table_data:
-    stat_data.append(txt.find_elements(By.XPATH, "//td[@ng-bind-html='team-stat']")[0].text)
-
-print(stat_data)
-
+#dump all these in a .txt file
+with open("football_data.txt", "w") as file:
+    for row in table_data:
+        file.write(row.text + "\n")
+    
 
 
 
